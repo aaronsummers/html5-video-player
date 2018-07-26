@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video player</title>
+  <script src="video.js"></script>
+</head>
+<body>
+  <div class="video-container">
+    <video preload="auto" id="video">
+      <source src="videofile.mp4" type="video/mp4">
+      <div class="not-supported">
+      *Your web browser does not support HTML5 video*<br>
+      </div>
+    </video>
+    <div id="video-controls">
+      <button type="button" id="mute"><span></span></button>
+      <div id="seek-bar-wrapper">
+        <input type="range" id="seek-bar" value="0">
+      </div>
+      <button type="button" id="play-pause"></button>
+      <button type="button" id="full-screen"></button>
+    </div>
+  </div>
+</body>
+</html>
