@@ -5,18 +5,25 @@
   padding: 0;
   margin: 0 auto;
   width: 100%;
-  height: auto;
+  height: 0;
+  padding-bottom: 56.25%;
   border: 1px solid black;
+  position: relative;
 }
 
 
+
 .video-container video {
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  top: 0;
+  left: 0;
   display: block;
   padding: 0;
   margin: 0;
 }
+
 
 
 .video-container .not-supported {
@@ -29,6 +36,10 @@
 
 #video-controls {
   padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 
