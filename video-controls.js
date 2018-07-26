@@ -70,13 +70,13 @@ window.onload = function() {
 		// Add paused to the play button
 		seekBar.addEventListener("mousedown", function() {
 		video.pause();
-		playButton.classList.add('paused');
+		playButton.classList.add('play');
 	});
 
 	// Play the video when the slider handle is dropped
 	// Remove paused from the play button
 	seekBar.addEventListener("mouseup", function() {
 		video.play();
-		playButton.classList.remove('paused');
+		playButton.classList.remove('play');
 	});
 }
