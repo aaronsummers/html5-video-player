@@ -77,6 +77,6 @@ window.onload = function() {
 	// Remove paused from the play button
 	seekBar.addEventListener("mouseup", function() {
 		video.play();
-		playButton.classList.remove('pause');
+		playButton.classList.add('pause');
 	});
 }
