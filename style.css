@@ -1,0 +1,165 @@
+.video-container {
+	video {
+		width: 100%;
+		height: auto;
+		display: block;
+		padding: 0;
+		margin: 0;
+	}
+	.not-supported {
+		color: white;
+		padding-top: 110px;
+		padding-bottom: 110px;
+	}
+	background-color: black;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+}
+#video-controls {
+	> * {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 70%; // Increase to make each control larger!
+	}
+	button {
+		padding: 0;
+	}
+
+	#seek-bar-wrapper {
+		#seek-bar {
+			appearance: none;
+			width: calc(100% - 2em); 
+			height: 1em; 
+			outline: none; 
+			opacity: 0.7; 
+			transition: opacity .2s;
+			position: absolute;
+			top: 50%;
+			left: .5em;
+			transform: translateY(-50%);
+			&:hover {
+				opacity: 1; 
+			}
+			&::-webkit-slider-thumb {
+				appearance: none;
+				width: 1em; 
+				height: 1em; 
+				background: yellow; 
+				cursor: pointer; 
+			}
+			&::-moz-range-thumb {
+				width: 1em; 
+				height: 1em; 
+				background: yellow; 
+				cursor: pointer; 
+			}
+		}
+		position: relative;
+		border-radius: 1em;
+		padding: 0 .5em;
+		background: rgba(white, .3); 
+		width: 80%;
+		height: 1.25em;
+	}
+	
+
+
+	#play-pause {
+		&.paused:before {
+			height: 1.4em;
+			border-style: double;
+			border-width: 0 0 0 1em;
+		}
+		&:hover {
+			border-color: transparent transparent transparent grey;
+		}
+		&:before {
+			@extend %content;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: transparent;
+			width: 0;
+			height: 0;
+			border-color: transparent transparent transparent white;
+			transition: 100ms all ease;
+			cursor: pointer;
+			// play state
+			border-style: solid;
+			border-width: .7em 0 .7em 1.3em;
+		}
+		position: relative;
+		height: 3em;
+		width: 3em;
+		background: yellow;
+		border: 0;
+	}
+
+
+
+	#mute {
+		span {
+			&:before,
+			&:after {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&:after {
+				@extend %content;
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-color: transparent #fff transparent transparent;
+				border-width: 1.2em 1.36em 1.2em 0;
+			}
+
+			&:before {
+				transform: translateY(-50%) rotate(45deg);
+				border-radius: 0 3.5em 0 0;
+				content: '';
+				position: absolute;
+				width: .8em;
+				height: .8em;
+				border-style: double;
+				border-color: #fff;
+				border-width: .65em .65em 0 0;
+				right: -.2em;
+				transition: all 0.05s $ease;
+			}
+			display: block;
+			width: 1em;
+			height: 1em;
+			background: #fff;
+		}
+		&:hover {
+			span:before {
+				transform: scale(.8) translate(-.2em, -50%) rotate(42deg);		
+			}
+		}
+	  &.mute {
+		span:before {
+			transform: scale(.5) translate(-1em, -50%) rotate(36deg);
+			opacity: 0;
+		}
+	  }
+		height: 3em;
+		width: 3em;
+		position: relative;
+		overflow: hidden;
+		background: none;
+		border: 0;
+	}
+	#full-screen {
+		border: 0.4em dashed #fff;
+		width: 3em;
+		height: 3em;
+		background: transparent;
+	}
+	padding: 1rem;
+}
