@@ -1,3 +1,4 @@
+![HTML5 VIDEO PLAYER](video.png)
 # html5-video-player
 
 Simple html5 video player with custom controls,
